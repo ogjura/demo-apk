@@ -21,6 +21,12 @@ pipeline {
   }
 }
 
+stage('android'){
+  steps{
+    sh 'cd android'
+  }
+}
+
 stage('Compile') {
   steps {
     // Compile the app and its dependencies
