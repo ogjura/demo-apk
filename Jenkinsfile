@@ -30,7 +30,7 @@ pipeline {
                                 "files" : [
                                     {
                                     "pattern" : "/android/app/build/outputs/apk/release/app-release.apk",
-                                    "target" : "repo/",
+                                    "target" : "repo/"
                                     
                                     }
                                 ]
