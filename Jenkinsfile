@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
+                sh 'pwd'
                 sh 'cd android'
+                sh 'pwd'
                 sh './gradlew clean'
             }
         }
