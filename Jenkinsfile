@@ -32,15 +32,15 @@ pipeline {
                     buildName: JOB_NAME,
                     buildNumber: BUILD_NUMBER,
                     serverId: 'artifactory', // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
-                    spec: '''{
+                    spec: """{
                               "files": [
                                  {
-                                  "pattern": "/home/gjurao/Desktop/android-jenkk/jenkins_android/android/app/build/outputs/apk/release/app-release.apk",
+                                  "pattern": "**/android/app/build/outputs/apk/release/app-release.apk",
                                   "target": "repo/",
                                   "recursive": "false"
                                 } 
                              ]
-                        }'''    
+                        }"""   
                     )
             }
         }
