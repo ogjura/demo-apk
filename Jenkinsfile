@@ -15,7 +15,7 @@ pipeline {
                 sh 'pwd'
                 sh 'cd android'
                 sh 'pwd'
-                sh './gradlew buildDebug'
+                sh './gradlew assembleDebug'
             }
         }
         stage('Unit Test') {
