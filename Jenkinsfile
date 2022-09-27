@@ -1,4 +1,8 @@
 pipeline {
+
+    def server = Artifactory.server 'artifactory'
+    def uploadSpec
+server.upload(uploadSpec)
     
     agent any
 
@@ -26,18 +30,14 @@ pipeline {
  
     stage ("Upload file") {
         steps(
-    rtUpload (
-    serverId: 'artifactory',
-    project: 'repo',
-    spec: '''{
-          "files": [
-            {
-              "pattern": "**/*-release.apk",
-              "target": "repo/"
-            }
-         ]
-    }'''
-    )
+            uploadSpec = """{
+    "files": [
+    {
+    "pattern": "**/target/*.war",
+    "target": "releases/${APP_REPO}/${version.trim()}/"
+    }
+    ]}"""
+    server.upload(uploadSpec)
     )
 }
    
