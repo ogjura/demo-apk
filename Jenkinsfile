@@ -24,6 +24,7 @@ pipeline {
     
     post {
          always{
+            sh 'pwd'
               archiveArtifacts artifacts: '**/*-debug.apk',
               onlyIfSuccessful: true
          }
