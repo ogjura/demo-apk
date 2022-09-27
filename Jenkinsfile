@@ -4,27 +4,27 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh './android/gradlew clean'
+                sh './jenkins_android/android/gradlew clean'
             }
         }
         stage('Build') {
             steps {
-                sh './android/gradlew buildDebug'
+                sh './jenkins_android/android/gradlew buildDebug'
             }
         }
         stage('Unit Test') {
             steps {
-                sh './android/gradlew test'
+                sh './jenkins_android/android/gradlew test'
             }
         }
         stage('UI Test') {
             steps {
-                sh './android/gradlew connectedAndroidTest'
+                sh './jenkins_android/android/gradlew connectedAndroidTest'
             }
         }
         stage('Assemble Apk') {
             steps {
-                sh './android/gradlew assembleDebug'
+                sh './jenkins_android/android/gradlew assembleDebug'
             }
         }
     }
