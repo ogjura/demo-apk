@@ -23,9 +23,7 @@ pipeline {
         
           
 
-
-    stage ("Upload file") {
-        def uploadSpec = """{
+ def uploadSpec = """{
             "files": [
                 {
                      "pattern" : "android/app/build/outputs/apk/release/app-release.apk",
@@ -33,6 +31,8 @@ pipeline {
                 }
             ]
         }"""
+    stage ("Upload file") {
+       
         steps{
         
         rtServer.upload spec: uploadSpec
