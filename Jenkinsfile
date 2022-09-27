@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'pwd'
-                sh 'cd android'
+                sh 'cd /var/lib/jenkins/workspace/android-jenk_master/android'
                 sh 'pwd'
                 sh './gradlew buildDebug'
             }
