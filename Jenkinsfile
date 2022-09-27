@@ -37,7 +37,7 @@ stage('Compile') {
 stage('Build') {
   steps {
     // Compile the app and its dependencies
-    sh './gradlew assemble${BUILD_TYPE}'
+    sh './android/gradlew assemble${BUILD_TYPE}'
     sh './gradlew generatePomFileForLibraryPublication'
   }
 }
