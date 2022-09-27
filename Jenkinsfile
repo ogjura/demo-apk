@@ -4,27 +4,27 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/gradlew clean'
+                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/android/gradlew clean'
             }
         }
         stage('Build') {
             steps {
-                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/gradlew buildDebug'
+                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/android/gradlew buildDebug'
             }
         }
         stage('Unit Test') {
             steps {
-                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/gradlew test'
+                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android//androidgradlew test'
             }
         }
         stage('UI Test') {
             steps {
-                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/gradlew connectedAndroidTest'
+                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/android/gradlew connectedAndroidTest'
             }
         }
         stage('Assemble Apk') {
             steps {
-                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/gradlew assembleDebug'
+                sh '/home/gjurao/Desktop/android-jenkk/jenkins_android/android/gradlew assembleDebug'
             }
         }
     }
