@@ -29,7 +29,7 @@ pipeline {
                         spec: '''{
                                 "files" : [
                                     {
-                                    "pattern" : "/android/app/build/outputs/apk/release/app-release.apk",
+                                    "pattern" : "android/app/build/outputs/apk/release/app-release.apk",
                                     "target" : "react-generic-local/"
                                     
                                     }
