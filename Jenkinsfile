@@ -29,9 +29,9 @@ pipeline {
                         spec: '''{
                                 "files" : [
                                     {
-                                    "pattern" : "**/android/app/build/outputs/apk/release/app-release.apk",
+                                    "pattern" : "/android/app/build/outputs/apk/release/app-release.apk",
                                     "target" : "repo/",
-                                    "recursive" : "false"
+                                    
                                     }
                                 ]
                                 
