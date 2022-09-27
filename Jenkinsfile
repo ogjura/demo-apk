@@ -25,16 +25,17 @@ pipeline {
 
  
     stage ("Upload file") {
-        
-       def uploadSpec = """{
-            "files": [
-                {
-                     "pattern" : "android/app/build/outputs/apk/release/app-release.apk",
-                     "target" : "react-generic-local/"
-                }
-            ]
-        }"""
-        rtServer.upload spec: uploadSpec
+
+    rtUpload (
+    serverId: 'artifactory',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "**/*-release.apk",
+              "target": "repo/"
+            }
+         ]
+    }'''
     
 }
    
