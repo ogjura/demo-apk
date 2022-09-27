@@ -32,8 +32,8 @@ stage ('Upload') {
                     spec: """{
                               "files": [
                                  {
-                                  "pattern": "/app/build/outputs/apk/release/app-release.apk",
-                                  "target": "repo/therelease.apk",
+                                  "pattern": "/home/gjurao/Desktop/android-jenkk/jenkins_android/android/app/build/outputs/apk/release/app-release.apk",
+                                  "target": "repo/",
                                   "recursive": "false"
                                 } 
                              ]
