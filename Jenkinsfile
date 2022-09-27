@@ -32,7 +32,7 @@ stage ('Upload') {
                               "files": [
                                  {
                                   "pattern": "/app/build/outputs/apk/release/app-release.apk",
-                                  "target": "http://localhost:8082/artifactory/repo/theartifact.apk",
+                                  "target": "http://localhost:8082/artifactory/repo/",
                                   "recursive": "false"
                                 } 
                              ]
