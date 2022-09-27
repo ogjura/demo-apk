@@ -1,6 +1,5 @@
 pipeline {
 
-    def artiServer = Artifactory.server('artifactory')
     agent any
 
     stages {
