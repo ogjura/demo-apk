@@ -25,11 +25,11 @@ pipeline {
         stage('Upload'){
             steps{
                 rtUpload(
-                        serverId: "artifact55ory",
+                        serverId: "artifactory",
                         spec: '''{
                                 "files" : [
                                     {
-                                    "pattern" : "android/app/build/outputs/apk/release/app-release.apk",
+                                    "pattern" : "**/*-release.apk",
                                     "target" : "react-generic-local/"
                                     
                                     }
