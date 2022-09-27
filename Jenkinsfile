@@ -25,9 +25,7 @@ pipeline {
         stage('Upload'){
             steps{
                 rtUpload(
-                        buildName: JOB_NAME,
-                        buildNumber: BUILD_NUMBER,
-                        serverId: SERVER_ID,
+                        serverId: artifactory,
                         spec: '''{
                                 "files" : [
                                     "pattern" : "**/android/app/build/outputs/apk/release/app-release.apk",
