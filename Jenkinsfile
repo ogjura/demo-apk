@@ -4,27 +4,28 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh '/var/lib/jenkins/workspace/android-jenk_master/android/gradlew clean'
+                sh 'cd android'
+                sh './gradlew clean'
             }
         }
         stage('Build') {
             steps {
-                sh '/var/lib/jenkins/workspace/android-jenk_master/android/gradlew buildDebug'
+                sh './gradlew buildDebug'
             }
         }
         stage('Unit Test') {
             steps {
-                sh '/var/lib/jenkins/workspace/android-jenk_master/android/gradlew test'
+                sh './gradlew test'
             }
         }
         stage('UI Test') {
             steps {
-                sh '/var/lib/jenkins/workspace/android-jenk_master/android/gradlew connectedAndroidTest'
+                sh './gradlew connectedAndroidTest'
             }
         }
         stage('Assemble Apk') {
             steps {
-                sh '/var/lib/jenkins/workspace/android-jenk_master/android/gradlew assembleDebug'
+                sh './gradlew assembleDebug'
             }
         }
     }
