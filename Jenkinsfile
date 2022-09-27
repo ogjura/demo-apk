@@ -25,7 +25,7 @@ pipeline {
 
  
     stage ("Upload file") {
-
+        steps(
     rtUpload (
     serverId: 'artifactory',
     spec: '''{
@@ -36,6 +36,7 @@ pipeline {
             }
          ]
     }'''
+    )
     )
 }
    
