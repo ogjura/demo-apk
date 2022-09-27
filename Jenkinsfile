@@ -21,16 +21,10 @@ pipeline {
   }
 }
 
-stage('android'){
-  steps{
-    sh 'cd android'
-  }
-}
-
 stage('Compile') {
   steps {
     // Compile the app and its dependencies
-    sh './gradlew compile${BUILD_TYPE}Sources'
+    sh './android/gradlew compile${BUILD_TYPE}Sources'
   }
 }
 
@@ -38,7 +32,7 @@ stage('Build') {
   steps {
     // Compile the app and its dependencies
     sh './android/gradlew assemble${BUILD_TYPE}'
-    sh './gradlew generatePomFileForLibraryPublication'
+    sh './android/gradlew generatePomFileForLibraryPublication'
   }
 }
 
