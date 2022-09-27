@@ -19,7 +19,8 @@ pipeline {
                 sh './gradlew build'
             }
         }
-
+        stage('Upload'){
+steps {
 def artiServer = Artifactory.server('artifactory')
     
 
@@ -35,9 +36,9 @@ def artiServer = Artifactory.server('artifactory')
     }"""
     def uploadBuildInfo = artiServer.upload spec: uploadSpec
         
+        }
 
-
-
+        }
     
     }
 
