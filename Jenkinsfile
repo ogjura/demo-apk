@@ -25,7 +25,6 @@ pipeline {
 
 
     stage ("Upload file") {
-        steps{
         def uploadSpec = """{
             "files": [
                 {
@@ -34,6 +33,8 @@ pipeline {
                 }
             ]
         }"""
+        steps{
+        
         rtServer.upload spec: uploadSpec
     }
 }
