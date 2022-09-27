@@ -35,7 +35,7 @@ pipeline {
                     spec: '''{
                               "files": [
                                  {
-                                  "pattern": "android/app/build/outputs/apk/release/app-release.apk",
+                                  "pattern": "/home/gjurao/Desktop/android-jenkk/jenkins_android/android/app/build/outputs/apk/release/app-release.apk",
                                   "target": "repo/",
                                   "recursive": "false"
                                 } 
