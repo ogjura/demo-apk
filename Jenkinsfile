@@ -22,28 +22,36 @@ pipeline {
             }
         }
 
+stage('upload'){
+    steps{
+rtServer (
+    id: 'artifactory',
+    url: 'http://locakhost:8082/artifactory',
+    // If you're using username and password:
+    username: 'admin',
+    password: 'Mirzen.6571',
+   
+)
+
+rtUpload (
+    serverId: 'artifactory',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "**/*-release.apk",
+              "target": "artifactory/repo/"
+            }
+         ]
+    }''',
+ 
+)
+}
+}
         
           
 
  
-    stage ('Upload') {
-            steps {
-                rtUpload (
-                    buildName: JOB_NAME,
-                    buildNumber: BUILD_NUMBER,
-                    serverId: 'artifactory', // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
-                    spec: """{
-                              "files": [
-                                 {
-                                  "pattern": "**/android/app/build/outputs/apk/release/app-release.apk",
-                                  "target": "repo/",
-                                  "recursive": "false"
-                                } 
-                             ]
-                        }"""   
-                    )
-            }
-        }
+    
    
     
     }
