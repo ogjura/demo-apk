@@ -28,6 +28,7 @@ pipeline {
         steps(
     rtUpload (
     serverId: 'artifactory',
+    project: 'repo',
     spec: '''{
           "files": [
             {
