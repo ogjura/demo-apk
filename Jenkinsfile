@@ -28,18 +28,24 @@ server.upload(uploadSpec)
           
 
  
-    stage ("Upload file") {
-        steps(
-            uploadSpec = """{
-    "files": [
-    {
-    "pattern": "**/target/*.war",
-    "target": "releases/${APP_REPO}/${version.trim()}/"
-    }
-    ]}"""
-    server.upload(uploadSpec)
-    )
-}
+    stage ('Upload') {
+            steps {
+                rtUpload (
+                    buildName: JOB_NAME,
+                    buildNumber: BUILD_NUMBER,
+                    serverId: 'artifactory', // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+                    spec: '''{
+                              "files": [
+                                 {
+                                  "pattern": "android/app/build/outputs/apk/release/app-release.apk",
+                                  "target": "repo/",
+                                  "recursive": "false"
+                                } 
+                             ]
+                        }'''    
+                    )
+            }
+        }
    
     
     }
