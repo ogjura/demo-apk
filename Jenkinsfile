@@ -1,7 +1,5 @@
 pipeline {
 
-    def server = Artifactory.server 'artifactory'
-    def uploadSpec
 server.upload(uploadSpec)
     
     agent any
