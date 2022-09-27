@@ -28,11 +28,12 @@ stage ('Upload') {
                     buildName: JOB_NAME,
                     buildNumber: BUILD_NUMBER,
                     serverId: 'artifactory', // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+
                     spec: """{
                               "files": [
                                  {
                                   "pattern": "/app/build/outputs/apk/release/app-release.apk",
-                                  "target": "http://localhost:8082/artifactory/repo/",
+                                  "target": "repo/therelease.apk",
                                   "recursive": "false"
                                 } 
                              ]
