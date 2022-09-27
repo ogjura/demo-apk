@@ -1,6 +1,6 @@
 pipeline {
 
-server.upload(uploadSpec)
+
     
     agent any
 
