@@ -25,7 +25,7 @@ pipeline {
 stage ('Upload') {
             steps {
                  sh '''#!/bin/bash
-                 mv /Desktop/android-jenkk/jenkins_android/android/app/build/outputs/apk/release/app-release.apk /var/lib/jenkins/workspace/android-jenk_master/android/app
+                 mv /android/app/build/outputs/apk/release/app-release.apk /var/lib/jenkins/workspace/android-jenk_master/android/app
                  '''
             }
         }
