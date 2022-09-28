@@ -31,9 +31,8 @@ stage ('Upload') {
             }
             post { 
                 success{
-                    sh '''#!/bin/bash
-                    firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk --app 1:503921475164:android:67e560d6629792b2c3b099 --groups "app_testers" --release-notes "new release”
-                     '''
+                    sh 'firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk --app 1:503921475164:android:67e560d6629792b2c3b099 --groups "app_testers" --release-notes "new release”'
+                     
                 }
             }
         }
