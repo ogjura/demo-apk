@@ -31,8 +31,10 @@ stage ('Upload') {
             }
             post { 
                 success{
-                    sh 'firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk --app 1:503921475164:android:67e560d6629792b2c3b099 --groups "app_testers" --release-notes "new release”'
-                     
+                    sh 'firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk --app 1:503921475164:android:67e560d6629792b2c3b099 --groups "app_testers" --release-notes "new release”'  
+                    mail to: 'sonigjura@gmail.com',
+                    subject: "OK: ${currentBuild.fullDisplayName}",
+                    body: "H ${env.BUILD_URL}"
                 }
             }
         }
